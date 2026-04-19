@@ -7,5 +7,4 @@ import { defineConfig } from 'astro/config';
 // If you set up a custom domain, remove `base` and update `site`.
 export default defineConfig({
   site: 'https://ollie-garden.com',
-  base: '/ollie-garden',
 });

@@ -1,0 +1,14 @@
+src/pages/index.astro
+  h_25392632ab7b53 6,8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "7adade077b216164d76046750c4835960480c9b4",
+  "prompts": {},
+  "humans": {
+    "h_25392632ab7b53": {
+      "author": "sunnydeveloper"
+    }
+  }
+}

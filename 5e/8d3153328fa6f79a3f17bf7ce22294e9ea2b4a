@@ -1,0 +1,32 @@
+src/pages/index.astro
+  h_25392632ab7b53 29-45
+src/pages/contact.astro
+  723ab59209e74eb5 12-17,224-244
+src/pages/testimonials.astro
+  723ab59209e74eb5 16-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "5e8d3153328fa6f79a3f17bf7ce22294e9ea2b4a",
+  "prompts": {
+    "723ab59209e74eb5": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "07da48e5-5c68-4ef7-8261-9aa39c46df25",
+        "model": "unknown"
+      },
+      "human_author": "sunnydeveloper",
+      "messages": [],
+      "total_additions": 34,
+      "total_deletions": 3,
+      "accepted_lines": 34,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_25392632ab7b53": {
+      "author": "sunnydeveloper"
+    }
+  }
+}

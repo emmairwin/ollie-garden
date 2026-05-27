@@ -1,0 +1,28 @@
+src/pages/index.astro
+  s_475d69e9d78220::t_e71444447d0f22 2,265
+src/pages/contact.astro
+  s_475d69e9d78220::t_e71444447d0f22 2,247
+src/pages/testimonials.astro
+  s_475d69e9d78220::t_e71444447d0f22 2,194
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "03ee5af642633ae6cba4407451360663cc371ac6",
+  "prompts": {},
+  "humans": {
+    "h_2d84de832ff5e9": {
+      "author": "sunnydeveloper <emma.irwin@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_475d69e9d78220": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "03a1d764-1200-4731-9935-107d16c59c50",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "sunnydeveloper <emma.irwin@gmail.com>"
+    }
+  }
+}

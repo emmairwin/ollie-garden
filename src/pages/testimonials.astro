@@ -3,8 +3,14 @@ import StatCounter from '../components/StatCounter.astro';
 const { pathname } = Astro.url;
 const base = import.meta.env.BASE_URL;
 const testimonials: { name: string; quote: string }[] = [
-  // Add testimonials here, e.g.:
-  // { name: "Jane S.", quote: "Ollie did a fantastic job on our garden!" },
+  {
+    name: "Jane W. (Sooke, BC)",
+    quote: "Oliver has done a wonderful job of working in my garden weeding, wipper snipping and landscaping.",
+  },
+  {
+    name: "Molly I (Victoria, BC)",
+    quote: "Oliver tackled our *very* overgrown backyard here in Fernwood; it looks so much better now! Thanks Oliver",
+  },
 ];
 ---
 
@@ -45,10 +51,20 @@ const testimonials: { name: string; quote: string }[] = [
       a { color: var(--green-dark); }
 
       .hero {
-        background: linear-gradient(160deg, #2d5a2d 0%, #3d7a3d 100%);
+        position: relative;
+        isolation: isolate;
+        background-image:
+          linear-gradient(rgba(16, 45, 16, 0.55), rgba(16, 45, 16, 0.45)),
+          url('/images/lawn.jpg');
+        background-size: cover;
+        background-position: center 62%;
+        background-repeat: no-repeat;
         color: var(--white);
         text-align: center;
-        padding: 1.75rem 1.5rem 1.5rem;
+        min-height: clamp(220px, 38vw, 420px);
+        padding: clamp(2rem, 5vw, 3.2rem) 1.5rem;
+        display: grid;
+        place-content: center;
       }
 
       .hero-badge {

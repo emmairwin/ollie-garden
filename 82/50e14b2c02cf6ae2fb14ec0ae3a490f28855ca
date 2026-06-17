@@ -1,0 +1,30 @@
+src/pages/index.astro
+  h_2d84de832ff5e9 77-78,82
+  s_2f05b9b0001fc1::t_85d844ce8de931 72-76,79,83-85
+src/pages/testimonials.astro
+  s_2f05b9b0001fc1::t_e5f6921cf10e1f 6-11,13
+  h_2d84de832ff5e9 60,64
+  s_2f05b9b0001fc1::t_74e5bae01d74fd 54-59,61,65-67
+  s_2f05b9b0001fc1::t_7a53dbde0128e3 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "8250e14b2c02cf6ae2fb14ec0ae3a490f28855ca",
+  "prompts": {},
+  "humans": {
+    "h_2d84de832ff5e9": {
+      "author": "sunnydeveloper <emma.irwin@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_2f05b9b0001fc1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "cff8f134-788a-4670-9bc1-df62bae2e32f",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "sunnydeveloper <emma.irwin@gmail.com>"
+    }
+  }
+}

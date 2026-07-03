@@ -1,0 +1,14 @@
+src/pages/testimonials.astro
+  h_2d84de832ff5e9 8,14-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "0134c5ee6b66c8246ee090e175086674dc1959b5",
+  "prompts": {},
+  "humans": {
+    "h_2d84de832ff5e9": {
+      "author": "sunnydeveloper <emma.irwin@gmail.com>"
+    }
+  }
+}

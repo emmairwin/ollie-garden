@@ -152,6 +152,7 @@ const base = import.meta.env.BASE_URL;
       }
 
       .btn-submit:hover { background: var(--green-mid); }
+      .btn-submit:disabled { opacity: 0.7; cursor: wait; }
 
       .form-note {
         text-align: center;
@@ -159,6 +160,13 @@ const base = import.meta.env.BASE_URL;
         color: #888;
         margin-top: 0.75rem;
       }
+
+      .form-status {
+        color: var(--green-dark);
+        font-weight: 600;
+      }
+
+      .form-status.error { color: #a12626; margin-top: 1rem; }
 
       footer {
         text-align: center;
@@ -213,6 +221,7 @@ const base = import.meta.env.BASE_URL;
           <button type="submit" class="btn-submit">Send Message</button>
           <p class="form-note">You'll receive a reply by email. Rate is $20/hr.</p>
         </form>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </div>
     </section>
 
@@ -221,10 +230,22 @@ const base = import.meta.env.BASE_URL;
     </footer>
 
     <script>
-      const form = document.querySelector('form');
+      const form = document.querySelector<HTMLFormElement>('form');
+      const submitButton = form?.querySelector<HTMLButtonElement>('.btn-submit');
+      const status = document.querySelector<HTMLElement>('#form-status');
+
+      if (!form || !submitButton || !status) {
+        throw new Error('Contact form elements are missing.');
+      }
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const data = new FormData(form);
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        status.textContent = '';
+        status.classList.remove('error');
+
         try {
           const res = await fetch(form.action, {
             method: 'POST',
@@ -232,12 +253,18 @@ const base = import.meta.env.BASE_URL;
             headers: { 'Accept': 'application/json' }
           });
           if (res.ok) {
-            window.location.href = 'https://ollie-garden.com';
+            form.hidden = true;
+            status.textContent = "Thanks for getting in touch! Your message has been sent. You'll receive a reply by email.";
           } else {
-            alert('Something went wrong — please try again.');
+            status.classList.add('error');
+            status.textContent = 'Something went wrong. Your message was not sent; please try again.';
           }
         } catch {
-          form.submit();
+          status.classList.add('error');
+          status.textContent = "We couldn't confirm whether your message was sent. Please check your connection before trying again.";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send Message';
         }
       });
     </script>

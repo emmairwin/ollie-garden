@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ollie-garden.com/sitemap-index.xml

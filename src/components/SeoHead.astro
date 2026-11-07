@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+if (!Astro.site) {
+  throw new Error('Set site in astro.config.mjs to generate SEO URLs.');
+}
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const image = new URL('/images/lawn2.jpg', Astro.site);
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ollie Garden" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content="A person trimming grass in a garden" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:image:alt" content="A person trimming grass in a garden" />

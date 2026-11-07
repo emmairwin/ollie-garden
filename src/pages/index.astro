@@ -1,5 +1,6 @@
 ---
 import StatCounter from '../components/StatCounter.astro';
+import SeoHead from '../components/SeoHead.astro';
 const { pathname } = Astro.url;
 const base = import.meta.env.BASE_URL;
 const services = [
@@ -26,20 +27,17 @@ const services = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <title>Ollie Garden — Youth Gardening Services</title>
-    <meta name="description" content="Affordable yard work in Sooke, Shirley, and Metchosin. Whipper snipping, weeding, and leaf blowing at $20/hr. Run by a local youth." />
-    <link rel="canonical" href="https://ollie-garden.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Ollie Garden — Youth Gardening Services" />
-    <meta property="og:description" content="Affordable yard work in Sooke, Shirley, and Metchosin. Whipper snipping, weeding, and leaf blowing at $20/hr." />
-    <meta property="og:url" content="https://ollie-garden.com" />
+    <SeoHead
+      title="Ollie Garden — Youth Gardening Services in Sooke"
+      description="Affordable yard work in Sooke, Shirley, and Metchosin. Whipper snipping, weeding, and leaf blowing at $20/hr. Run by a local youth."
+    />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Ollie Garden",
       "description": "Youth gardening services in Sooke, Shirley, and Metchosin.",
-      "url": "https://ollie-garden.com",
+      "url": "https://ollie-garden.com/",
       "areaServed": ["Sooke", "Shirley", "Metchosin"],
       "priceRange": "$20/hr"
     }
@@ -247,8 +245,8 @@ const services = [
     <!-- NAV -->
     <nav class="site-nav">
       <a href={base} class={!pathname.includes('testimonials') && !pathname.includes('contact') ? 'active' : ''}>Services</a>
-      <a href={`${base}testimonials`} class={pathname.includes('testimonials') ? 'active' : ''}>Testimonials</a>
-      <a href={`${base}contact`} class={pathname.includes('contact') ? 'active' : ''}>Contact</a>
+      <a href={`${base}testimonials/`} class={pathname.includes('testimonials') ? 'active' : ''}>Testimonials</a>
+      <a href={`${base}contact/`} class={pathname.includes('contact') ? 'active' : ''}>Contact</a>
     </nav>
 
     <!-- SERVICES -->
@@ -264,7 +262,7 @@ const services = [
       </div>
 
       <div class="cta-row">
-        <a class="cta-link primary" href={`${import.meta.env.BASE_URL}contact`}>Get in Touch</a>
+        <a class="cta-link primary" href={`${base}contact/`}>Get in Touch</a>
       </div>
     </section>
 
